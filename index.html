@@ -86,8 +86,10 @@
 <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 
 <script>
-  var map = L.map('map').setView([5.606988, -73.563196], 13); // Coordenadas de Villa de Leyva
-
+  var map = L.map('map',{
+    zoomControl: false
+}).setView([5.606988, -73.563196], 13); // Coordenadas de Villa de Leyva
+  
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
@@ -110,9 +112,9 @@ L.Routing.control({
   routeWhileDragging: false,
   lineOptions: { styles: [{color: 'blue', weight: 4}] },
   addWaypoints: false,
-    draggableWaypoints: false,
-    fitSelectedRoutes: false,
-    show: false,
+  draggableWaypoints: false,
+  fitSelectedRoutes: false,
+  show: false,
     
 }).addTo(map);
 
@@ -122,9 +124,9 @@ L.Routing.control({
   routeWhileDragging: false,
   lineOptions: { styles: [{color: 'green', weight: 4}] },
   addWaypoints: false,
-    draggableWaypoints: false,
-    fitSelectedRoutes: false,
-    show: false,
+  draggableWaypoints: false,
+  fitSelectedRoutes: false,
+  show: false,
     
 }).addTo(map);
 
@@ -134,9 +136,9 @@ L.Routing.control({
   routeWhileDragging: false,
   lineOptions: { styles: [{color: 'red', weight: 4}] },
   addWaypoints: false,
-    draggableWaypoints: false,
-    fitSelectedRoutes: false,
-    show: false,
+  draggableWaypoints: false,
+  fitSelectedRoutes: false,
+  show: false,
     
 }).addTo(map);
   

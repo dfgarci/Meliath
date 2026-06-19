@@ -305,3 +305,7 @@ body {
     border-radius: 10px;
     background: #d4a373;
 }
+
+.leaflet-routing-container {
+    display: none;
+}
