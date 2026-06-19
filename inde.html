@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Villa Villa Meliath</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+  href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- Leaflet Routing Machine CSS -->
+  <link rel="stylesheet"
+  href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+
+</head>
+<body>
+  <!-- Barra superior -->
+  <header class="top-bar">
+
+    <div class="logo">
+        Villa Meliath
+    </div>
+
+    <nav class="menu">
+        <a href="#">Inicio</a>
+        <a href="#">Habitaciones</a>
+        <a href="#">Rutas Turísticas</a>
+        <a href="#">Galería</a>
+
+        <a class="reserva" href="#">
+            Reservar
+        </a>
+    </nav>
+
+</header>
+
+  <!-- Imagen principal -->
+  <section class="hero">
+
+    <img src="img/frente.jpeg" alt="Villa Meliath">
+
+    <div class="overlay">
+
+        <h1>Villa Meliath</h1>
+
+        <p>
+            Ubicación estratégica para visitar
+            Villa de Leyva, Sáchica y Sutamarchán.
+        </p>
+
+        <p>
+            A tan solo 15 minutos de cualquiera de estos destinos.
+        </p>
+
+        <button>Reservar</button>
+
+    </div>
+
+</section>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<div class="map-section">
+
+    <h1 class="map-title">
+        Descubre las Rutas Turísticas del Valle de Saquencipá
+    </h1>
+
+    <p class="map-subtitle">
+        Explore los principales destinos turísticos, atractivos y rutas de acceso
+        entre Sáchica, Villa de Leyva y Sutamarchán.
+    </p>
+    <section class="mapa-tematico">
+        
+        <div class="imagen-centro">
+          <img src="img/mapa-boyaca.png" alt="Mapa turístico de Boyacá">
+        </div>
+      </section>
+    <div id="map"></div>
+
+</div>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Leaflet Routing Machine JS -->
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+<script>
+  var map = L.map('map').setView([5.606988, -73.563196], 13); // Coordenadas de Villa de Leyva
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  L.marker([5.606988, -73.563196]).addTo(map)
+    .bindPopup('Villa Meliath<br>Vereda Espinal, Sachica')
+    .openPopup();
+  
+  // Coordenadas de pueblos
+  var villa = L.latLng(5.634, -73.524);
+  var sachica = L.latLng(5.584552, -73.542171);
+  var sutamarchan = L.latLng(5.620253, -73.620075);
+  var VillaM = L.latLng(5.606988, -73.563196);
+
+
+
+  // Ruta Villa → Villa
+L.Routing.control({
+  waypoints: [VillaM, villa],
+  routeWhileDragging: false,
+  lineOptions: { styles: [{color: 'blue', weight: 4}] },
+  addWaypoints: false,
+    draggableWaypoints: false,
+    fitSelectedRoutes: false,
+    show: false,
+    
+}).addTo(map);
+
+// Ruta Villa → Sáchica
+L.Routing.control({
+  waypoints: [VillaM, sachica],
+  routeWhileDragging: false,
+  lineOptions: { styles: [{color: 'green', weight: 4}] },
+  addWaypoints: false,
+    draggableWaypoints: false,
+    fitSelectedRoutes: false,
+    show: false,
+    
+}).addTo(map);
+
+// Ruta Villa → Sutamarchán
+L.Routing.control({
+  waypoints: [VillaM, sutamarchan],
+  routeWhileDragging: false,
+  lineOptions: { styles: [{color: 'red', weight: 4}] },
+  addWaypoints: false,
+    draggableWaypoints: false,
+    fitSelectedRoutes: false,
+    show: false,
+    
+}).addTo(map);
+  
+
+</script>
+
+
+
+
+  <!-- Sección de descripción -->
+  <section class="descripcion">
+    <h2>Villa familiar cerca al eco-parque de los colores.</h2>
+    <p>El Villa Meliath es el destino preferido para parejas, familias y turistas que buscan descanso, paz y relajación en la mágica Boyacá.</p>
+  </section>
+
+  <!-- Ícono de WhatsApp -->
+  <a href="https://wa.me/573057861069" class="whatsapp">💬</a>
+</body>
+</html>

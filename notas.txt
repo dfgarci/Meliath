@@ -1,0 +1,77 @@
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Leaflet Routing Machine JS -->
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+
+
+  .hero {
+    background-image: url('img/frente.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    position: relative;
+  }
+  
+  .overlay {
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+  }
+  
+  .overlay h1 {
+    color: #a0522d;
+    font-size: 2em;
+  }
+  
+  .overlay button {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+
+
+
+  <header class="top-bar">
+    <div class="contact">
+      <span>📞 +57 305 786 1069</span>
+      <span>📍 Vereda el Espinal, Sachica, Boyacá</span>
+    </div>
+    <nav class="menu">
+      <a href="#">Inicio</a>
+      <a href="#">Alojamiento</a>
+      <a href="#">Celebraciones</a>
+      <a href="#" class="reserva">Reservar</a>
+    </nav>
+  </header>
+
+
+
+    .top-bar {
+    background-color: #a0522d;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .menu .reserva {
+    font-weight: bold;
+    color: #ffd700;
+  }
+  
