@@ -41,6 +41,8 @@ body {
     font-weight:700;
 
     letter-spacing:1px;
+
+    font-style: italic;
 }
 
 .menu{
@@ -264,7 +266,7 @@ body {
 
 
 .map-section{
-    width: 90%;
+    width: 85%;
     max-width: 1400px;
     margin: 40px auto;
     text-align: center;
@@ -305,10 +307,141 @@ body {
     border-radius: 10px;
     background: #d4a373;
 }
-
+/*quita las barras laterales del mapa*/
 .leaflet-routing-container {
     display: none;
 }
+/*seccion de pasarela de fotos*/
+.gallery-section{
+
+    text-align:center;
+
+    width:90%;
+
+    margin:60px auto;
+}
+
+.gallery-section h2{
+
+    font-size:2rem;
+
+    color:#2c3e50;
+
+    margin-bottom:10px;
+}
+
+.gallery-section p{
+
+    color:#6c757d;
+
+    margin-bottom:35px;
+}
+
+.slider{
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.slide-track{
+
+    display:flex;
+
+    width:calc(350px * 10);
+
+    animation: scroll 45s linear infinite;
+}
+
+.slide-track img{
+
+    width:350px;
+
+    height:250px;
+
+    object-fit:cover;
+
+    margin-right:15px;
+
+    border-radius:15px;
+
+    flex-shrink:0;
+}
+
+.slider:hover .slide-track{
+
+    animation-play-state: paused;
+
+}
+
+.slider{
+
+    position:relative;
+}
+
+.slider::before,
+.slider::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    width:80px;
+
+    height:100%;
+
+    z-index:2;
+}
+
+.slider::before{
+
+    left:0;
+
+    background:linear-gradient(
+        to right,
+        white,
+        transparent
+    );
+}
+
+.slider::after{
+
+    right:0;
+
+    background:linear-gradient(
+        to left,
+        white,
+        transparent
+    );
+}
+
+@keyframes scroll {
+
+    from {
+
+        transform: translateX(0);
+
+    }
+
+    to {
+
+        transform: translateX(-50%);
+
+    }
+
+}
+
+.slider:hover .slide-track{
+
+    animation-play-state: paused;
+
+}
+
+/*resposive area*/
 @media(max-width:768px){
 
     .top-bar{
@@ -350,7 +483,7 @@ body {
  
     .hero img{
  
-       height:320px;
+       height:420px;
  
     }
  
@@ -382,7 +515,7 @@ body {
 
     .map-section{
 
-        width:95%;
+        width:80%;
 
     }
 
